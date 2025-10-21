@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: helvetica;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+@mixin areaAssign($boxname, $color, $bgimage: none){
+    grid-area: $boxname;
+    background-color: $color;
+    background-image: $bgimage;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 4px;
+    display: flex;
+    align-items: flex-end;
+    h1{
+        width: 100%;
+        height: 20%;
+        padding-top: 4px;
+        padding-left: 30px;
+        color: white;
+        font-size: 30px;
+        background-color: rgba(0, 0, 0, 0.505);
+}
+}
+
+.main{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    background-color: #372727;
+    display: grid;
+    gap: 4px;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "box1 box2 box3 box4"
+                         "box5 box6 box7 box4"
+                         "box8 box6 box9 box10";
+    
+    .box1{
+        @include areaAssign(box1, #f28c8c,url('photos/hulk.jpg'));
+    }
+    .box2{
+        @include areaAssign(box2, #f2b88c, url('photos/captain.jpg'));
+    }
+    .box3{
+        @include areaAssign(box3, #f2e18c,url('photos/ultron.jpeg'));
+    }
+    .box4{
+        @include areaAssign(box4, #d0f28c,url('photos/ironman.jpg'));
+    }
+    .box5{
+        @include areaAssign(box5, #8cf28c,url('photos/hawkeye.jpg'));
+    }
+    .box6{
+        @include areaAssign(box6, #8cf2b8, url('photos/avengers.jpg'));
+    }
+    .box7{
+        @include areaAssign(box7, #8ce1f2,url('photos/thor.jpg'));
+    }
+    .box8{
+        @include areaAssign(box8, #8c8cf2,url('photos/spider.jpg'));
+    }
+    .box9{
+        @include areaAssign(box9, #b88cf2,url('photos/drdoom.jpg'));
+    }
+    .box10{
+        @include areaAssign(box10, #f28cf2,url('photos/blackwidow.jpg'));
+    }
+
+}
+
